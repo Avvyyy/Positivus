@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap'); /* Grotest font */
+@import "tailwindcss";
+
+
+@theme {
+    --font-grotesk: 'Space Grotesk', sans-serif;
+    --color-primary: #B9FF66;
+    --color-secondary: #191A23;
+    --color-gray: #F3F3F3;
+    --color-white: #ffffff;
+}
+
+
+.button {
+    @apply bg-secondary text-white rounded-md py-3 h-13 lg:max-w-1/2 md:max-w-9/12 sm:max-w-5/12 w-full text-base hover:bg-primary ease-in-out delay-75 transition hover:text-black hover:border-b-8 border-b-black hover:rounded-b-xl;
+}
+
+.heading-text {
+    @apply leading-12 md:text-4xl sm:text-3xl text-4xl font-semibold text-black 
+}
+
+.h2 {
+    @apply text-3xl font-semibold bg-primary rounded-lg sm:w-fit w-full text-center p-2
+}
+
+.h3{
+    @apply md:text-3xl sm:text-2xl text-4xl font-semibold
+}
+
+.greenService {
+    @apply bg-primary h-72 border-b-12 border-black border-2 w-full flex hover:bg-gray transition ease-in-out p-5 rounded-2xl
+}
+
+.grayService {
+    @apply bg-gray h-72 border-b-12 border-black border-2 w-full flex  hover:bg-primary transition ease-in-out p-5 rounded-xl
+}
+
+.blackService {
+    @apply bg-black h-72 border-b-12 border-black border-2 w-full flex hover:bg-primary transition ease-in-out p-5 rounded-xl
+}
