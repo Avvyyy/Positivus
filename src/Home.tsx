@@ -1,7 +1,7 @@
 // Landing Page -Home for Positivus
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import ServicesBlock from "./components/ServicesBlock";
+import ServicesBlock from "./components/servicesBlock";
 import CaseStudies from "./components/CaseStudies";
 import Carousel from "./components/Carousel";
 import Team from "./components/Team";
