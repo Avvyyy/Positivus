@@ -7,7 +7,7 @@ import Carousel from "./components/Carousel";
 import Team from "./components/Team";
 import WorkingProcess from "./components/WorkingProcess";
 
-age from "./assets/hero-image.svg";
+import heroImage from "./assets/hero-image.svg";
 import makeThingsHappen from "./assets/makeThingsHAppen.png";
 
 // image imports for the services section
@@ -17,7 +17,6 @@ import smmImage from "./assets/Illustration-2.svg";
 import emImage from "./assets/tokyo-sending-messages-from-one-place-to-another 1.svg";
 import ccImage from "./assets/tokyo-browser-window-with-emoticon-likes-and-stars-around 2.svg";
 import atImage from "./assets/tokyo-volumetric-analytics-of-different-types-in-web-browsers 2.svg";
-
 
 // Imports for horizontal auto-scroll
 import {
@@ -118,6 +117,19 @@ function Home() {
 
       {/* Services Section */}
       <section id="services" className="md:mb-36 mb-18">
+        <div className="flex flex-col md:flex-row gap-5 items-center mb-10">
+          <h2 className="h2 flex-1">Services</h2>
+          <p className="text-lg ">
+            At our digital marketing agency, we offer a range of services to
+            help businesses grow and succeed online. These services include:
+          </p>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          {servicesArray.map((service) => {
+            return <ServicesBlock {...service} key={service.link} />;
+          })}
+        </div>
+      </section>
 
       <section
         id=""
