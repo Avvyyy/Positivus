@@ -13,6 +13,7 @@
 
 .button {
     @apply bg-secondary text-white rounded-md p-3 h-13 md:w-max  sm:max-w-5/12 w-full text-base hover:bg-primary ease-in-out delay-75 transition hover:text-black hover:border-b-8 border-b-black hover:rounded-b-xl;
+
 }
 
 .heading-text {
@@ -39,5 +40,3 @@
     @apply bg-black h-72 border-b-12 border-black border-2 w-full flex hover:bg-primary transition ease-in-out p-5 rounded-xl
 }
 
-
-  
