@@ -40,12 +40,4 @@
 }
 
 
-/* Dot styling for the carousel */
-.custom-dot {
-    @apply text-white;
-  }
-  
-  .slick-dots li.slick-active .custom-dot {
-    @apply text-primary;
-  }
   

@@ -1,5 +1,4 @@
 // Component for working process section
-import React from "react"
 import { useState } from 'react';
 import { GoPlusCircle } from "react-icons/go";
 import { SlMinus } from "react-icons/sl";

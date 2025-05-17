@@ -1,4 +1,3 @@
-import React from 'react';
 // Landing Page -Home for Positivus
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";

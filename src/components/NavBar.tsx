@@ -1,5 +1,4 @@
 // Navbar
-import React from "react";
 import { RxHamburgerMenu,  RxCross1 } from "react-icons/rx";
 import logo from "../assets/Logo.svg";
 import { useState } from "react";

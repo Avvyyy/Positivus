@@ -1,6 +1,5 @@
 import { HashLink } from "react-router-hash-link";
 import { RxArrowTopRight } from "react-icons/rx";
-import React from "react";
 
 function CaseStudies() {
 const caseStudiesArray = [

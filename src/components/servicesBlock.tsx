@@ -1,4 +1,3 @@
-import React from 'react';
 // Reusable blocks for each of the services
 import { RxArrowTopRight } from "react-icons/rx"
 import { HashLink } from 'react-router-hash-link';
