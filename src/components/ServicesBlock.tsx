@@ -24,6 +24,4 @@ function ServicesBlock({label, image, link, boxStyling, textBg } : servicesBlock
     )
 }
 
-
-
 export default ServicesBlock;
