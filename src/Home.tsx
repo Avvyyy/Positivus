@@ -1,18 +1,13 @@
 // Landing Page -Home for Positivus
-import { HashLink } from "react-router-hash-link";
-import { useRef } from "react";
-import {
-  animate,
-  motion,
-  MotionValue,
-  useMotionValue,
-  useMotionValueEvent,
-  useScroll,
-} from "framer-motion";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import ServicesBlock from "./components/ServicesBlock";
-import heroImage from "./assets/hero-image.svg";
+import ServicesBlock from "./components/servicesBlock";
+import CaseStudies from "./components/CaseStudies";
+import Carousel from "./components/Carousel";
+import Team from "./components/Team";
+import WorkingProcess from "./components/WorkingProcess";
+
+age from "./assets/hero-image.svg";
 import makeThingsHappen from "./assets/makeThingsHAppen.png";
 
 // image imports for the services section
@@ -22,7 +17,7 @@ import smmImage from "./assets/Illustration-2.svg";
 import emImage from "./assets/tokyo-sending-messages-from-one-place-to-another 1.svg";
 import ccImage from "./assets/tokyo-browser-window-with-emoticon-likes-and-stars-around 2.svg";
 import atImage from "./assets/tokyo-volumetric-analytics-of-different-types-in-web-browsers 2.svg";
-import { RxArrowTopRight } from "react-icons/rx";
+
 
 // Imports for horizontal auto-scroll
 import {
@@ -35,14 +30,8 @@ import {
 } from "react-icons/si";
 import Marquee from "react-fast-marquee";
 
-function Home() {
-  // Animation for the case studies
-  const carouselRef = useRef(null);
-  const { scrollXProgress } = useScroll({
-    container: carouselRef,
-  });
-  // const maskImage = useScrollOverflowMask(scrollXProgress);
 
+function Home() {
   const icons = [SiNotion, SiNetflix, SiZoom, SiDribbble, SiAmazon, SiHubspot];
 
   //Array holding the various services features
@@ -91,21 +80,6 @@ function Home() {
     },
   ];
 
-  //   Array holding the various case studies
-  const caseStudiesArray = [
-    {
-      text: "For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.",
-      link: "#case-studies",
-    },
-    {
-      text: "For a B2B software company, we developed an SEO strategy that resulted in a first page ranking for key keywords and a 200% increase in organic traffic.",
-      link: "#case-studies",
-    },
-    {
-      text: "For a national retail chain, we created a social media marketing campaign that increased followers by 25% and generated a 20% increase in online sales.",
-      link: "#case-studies",
-    },
-  ];
   return (
     <div className="font-grotesk px-2 lg:px-24 md:px-12 py-6">
       <NavBar />
@@ -143,20 +117,7 @@ function Home() {
       </main>
 
       {/* Services Section */}
-      {/* <section id="services" className="md:mb-36 mb-18">
-        <div className="flex flex-col md:flex-row gap-5 items-center mb-10">
-          <h2 className="h2 flex-1">Services</h2>
-          <p className="text-lg ">
-            At our digital marketing agency, we offer a range of services to
-            help businesses grow and succeed online. These services include:
-          </p>
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-          {servicesArray.map((service) => {
-            return <ServicesBlock {...service} key={service.link} />;
-          })}
-        </div>
-      </section> */}
+      <section id="services" className="md:mb-36 mb-18">
 
       <section
         id=""
@@ -188,33 +149,7 @@ function Home() {
             through Our Case Studies
           </p>
         </div>
-        <div
-          className="bg-black rounded-3xl flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-3 p-10 gap-10 "
-          ref={carouselRef}
-        >
-          {caseStudiesArray.map((caseStudy, index) => {
-            return (
-              <div
-                key={caseStudy.link}
-                className={`flex flex-col justify-between gap-5 text-lg md:pr-5 flex-shrink-0 snap-start w-full h-full bg-primary ${
-                  index !== caseStudiesArray.length - 1
-                    ? "md:border-r md:border-white"
-                    : ""
-                }`}
-              >
-                <p className="text-white ">{caseStudy.text}</p>
-                <HashLink
-                  smooth
-                  to={caseStudy.link}
-                  className="text-primary flex items-center"
-                >
-                  {" "}
-                  Learn More <RxArrowTopRight />
-                </HashLink>
-              </div>
-            );
-          })}
-        </div>
+        <CaseStudies />
       </section>
 
       {/* Working process section */}
@@ -225,7 +160,9 @@ function Home() {
             Step-by-step guide to achieving your Business Goals
           </p>
         </div>
-        <div></div>
+        <div>
+          <WorkingProcess />
+        </div>
       </section>
 
       {/* Team section */}
@@ -237,7 +174,12 @@ function Home() {
             marketing strategie
           </p>
         </div>
-        <div></div>
+        <div className="flex flex-col gap-10">
+          <Team />
+          <button type="button" className="button place-self-end-safe">
+            See all team...
+          </button>
+        </div>
       </section>
 
       {/* Testimonials section */}
@@ -249,7 +191,9 @@ function Home() {
             about our Digital Marketing services
           </p>
         </div>
-        <div></div>
+        <div>
+          <Carousel />
+        </div>
       </section>
 
       {/* Contact Us section */}
@@ -260,19 +204,65 @@ function Home() {
             Connect with us: Let's discuss your Digital Marketing needs
           </p>
         </div>
-        <div>
-          <form>
-            <div>
-              <div>
-                <input type="radio" name="purpose" id="sayHi" value="Say Hi" />
+        <div className="md:mb-36 mb-18 bg-gray rounded-3xl md:p-20 px-3 py-6">
+          <form className="flex flex-col gap-5 w-full lg:w-1/2">
+            <div className="flex gap-10">
+              <div className="flex gap-1">
+                <input
+                  type="radio"
+                  name="purpose"
+                  id="sayHi"
+                  value="Say Hi"
+                  className="accent-primary scale-150 checked:border border-black"
+                />
                 <label htmlFor="sayHi">Say Hi</label>
               </div>
-              <div>
-                <input type="radio" name="purpose" id="getAQuote" value="Get A Quote" />
+              <div className="flex gap-1">
+                <input
+                  type="radio"
+                  name="purpose"
+                  id="getAQuote"
+                  value="Get A Quote"
+                  className="accent-primary scale-150 checked:border border-black"
+                />
                 <label htmlFor="getAQuote">Get A Quote</label>
               </div>
             </div>
+            <div className="flex flex-col gap-2">
+              <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                className="border border-black rounded-lg outline-primary h-10 w-full bg-white"
+              />
+            </div>
+            <div className="flex flex-col gap-2">
+              <label htmlFor="email">Email Address *</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                className="border border-black rounded-lg outline-primary h-10 w-full bg-white"
+                required
+              />
+            </div>
+            <div className="flex flex-col gap-2">
+              <label htmlFor="message">Message *</label>
+              <textarea
+                name="message"
+                id="messsage"
+                placeholder="Message"
+                className="border border-black rounded-lg outline-primary h-40 w-full bg-white"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" className="button">
+              Submit
+            </button>
           </form>
+
+          <div className="md:bg-[url('./assets/contactUsImage.png')] bg-no-repeat bg-[120%] bg-contain w-full"></div>
         </div>
       </section>
 

@@ -1,0 +1,158 @@
+{
+  "hash": "14cbd18a",
+  "configHash": "f77d5e99",
+  "lockfileHash": "0107bc2b",
+<<<<<<< Updated upstream
+  "browserHash": "a40284fe",
+=======
+  "browserHash": "619cfad1",
+>>>>>>> Stashed changes
+  "optimized": {
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+<<<<<<< Updated upstream
+      "fileHash": "7d0486c3",
+=======
+      "fileHash": "de583ee4",
+>>>>>>> Stashed changes
+      "needsInterop": false
+    },
+    "react-icons/si": {
+      "src": "../../node_modules/react-icons/si/index.mjs",
+      "file": "react-icons_si.js",
+<<<<<<< Updated upstream
+      "fileHash": "45f85a18",
+=======
+      "fileHash": "e77e530e",
+>>>>>>> Stashed changes
+      "needsInterop": false
+    },
+    "react-fast-marquee": {
+      "src": "../../node_modules/react-fast-marquee/dist/index.js",
+      "file": "react-fast-marquee.js",
+<<<<<<< Updated upstream
+      "fileHash": "8698257a",
+=======
+      "fileHash": "1e093070",
+>>>>>>> Stashed changes
+      "needsInterop": true
+    },
+    "react-router-hash-link": {
+      "src": "../../node_modules/react-router-hash-link/dist/react-router-hash-link.esm.js",
+      "file": "react-router-hash-link.js",
+<<<<<<< Updated upstream
+      "fileHash": "0d656661",
+=======
+      "fileHash": "03679e47",
+>>>>>>> Stashed changes
+      "needsInterop": false
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+<<<<<<< Updated upstream
+      "fileHash": "82ca98d2",
+=======
+      "fileHash": "7535fe70",
+>>>>>>> Stashed changes
+      "needsInterop": true
+    },
+    "framer-motion": {
+      "src": "../../node_modules/framer-motion/dist/es/index.mjs",
+      "file": "framer-motion.js",
+<<<<<<< Updated upstream
+      "fileHash": "e4f33d09",
+=======
+      "fileHash": "765d3249",
+>>>>>>> Stashed changes
+      "needsInterop": false
+    },
+    "react-icons/ri": {
+      "src": "../../node_modules/react-icons/ri/index.mjs",
+      "file": "react-icons_ri.js",
+<<<<<<< Updated upstream
+      "fileHash": "dbab7a9e",
+=======
+      "fileHash": "e19d2214",
+>>>>>>> Stashed changes
+      "needsInterop": false
+    },
+    "react-icons/rx": {
+      "src": "../../node_modules/react-icons/rx/index.mjs",
+      "file": "react-icons_rx.js",
+<<<<<<< Updated upstream
+      "fileHash": "068fd201",
+=======
+      "fileHash": "d0a1f81e",
+>>>>>>> Stashed changes
+      "needsInterop": false
+    },
+    "react-icons/fa6": {
+      "src": "../../node_modules/react-icons/fa6/index.mjs",
+      "file": "react-icons_fa6.js",
+<<<<<<< Updated upstream
+      "fileHash": "ef16be97",
+=======
+      "fileHash": "72444f6d",
+>>>>>>> Stashed changes
+      "needsInterop": false
+    },
+    "react-icons/go": {
+      "src": "../../node_modules/react-icons/go/index.mjs",
+      "file": "react-icons_go.js",
+<<<<<<< Updated upstream
+      "fileHash": "228a9748",
+=======
+      "fileHash": "a460d233",
+>>>>>>> Stashed changes
+      "needsInterop": false
+    },
+    "react-icons/sl": {
+      "src": "../../node_modules/react-icons/sl/index.mjs",
+      "file": "react-icons_sl.js",
+<<<<<<< Updated upstream
+      "fileHash": "013f1c7d",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-HCW2M3BI": {
+      "file": "chunk-HCW2M3BI.js"
+    },
+    "chunk-BFKS6UZR": {
+      "file": "chunk-BFKS6UZR.js"
+    },
+=======
+      "fileHash": "4a5525c0",
+      "needsInterop": false
+    },
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "e89ae906",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "03039584",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-KGFUUHPS": {
+      "file": "chunk-KGFUUHPS.js"
+    },
+    "chunk-JPFIJ2ZJ": {
+      "file": "chunk-JPFIJ2ZJ.js"
+    },
+    "chunk-HCW2M3BI": {
+      "file": "chunk-HCW2M3BI.js"
+    },
+>>>>>>> Stashed changes
+    "chunk-3A6WRQ5K": {
+      "file": "chunk-3A6WRQ5K.js"
+    }
+  }
+}
