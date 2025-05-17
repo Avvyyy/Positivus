@@ -1,4 +1,5 @@
 // Teams section cards
+import React from 'react';
 import { Link } from "react-router-dom";
 import { FaLinkedinIn } from "react-icons/fa6";
 import teamImage from "../assets/teamImage.png";

@@ -1,3 +1,4 @@
+import React from 'react';
 import logoWhite from "../assets/logo-white.png";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
