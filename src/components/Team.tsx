@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { FaLinkedinIn } from "react-icons/fa6";
 import teamImage from "../assets/teamImage.png";
-
+import { motion } from "framer-motion";
 function Team() {
   const teamData = [
     {
@@ -57,7 +57,12 @@ function Team() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       {teamData.map((data, index) => (
-        <div
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            show: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.5 }}
           key={index}
           className="border border-black border-b-10 rounded-3xl px-6 py-2 hover:bg-primary hover:border-b-12 transition ease-in-out delay-75"
         >
@@ -72,16 +77,16 @@ function Team() {
 
           <div className="flex flex-col gap-5">
             <div className="flex items-end gap-5">
-              <img src={data.img} alt={data.name} className="h-20 w-20"/>
+              <img src={data.img} alt={data.name} className="h-20 w-20" />
               <div className="fex flex-col">
                 <h4 className="text-xl font-bold ">{data.name}</h4>
                 <p className="text-sm">{data.role} </p>
               </div>
             </div>
-            <hr className="border w-full "/>
+            <hr className="border w-full " />
             <p className="text-lg">{data.description}</p>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );
