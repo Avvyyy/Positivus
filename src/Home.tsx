@@ -1,4 +1,5 @@
 // Landing Page -Home for Positivus
+import { useRef } from "react";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import ServicesBlock from "./components/servicesBlock";
@@ -6,10 +7,8 @@ import CaseStudies from "./components/CaseStudies";
 import Carousel from "./components/Carousel";
 import Team from "./components/Team";
 import WorkingProcess from "./components/WorkingProcess";
-
 import heroImage from "./assets/hero-image.svg";
 import makeThingsHappen from "./assets/makeThingsHAppen.png";
-
 // image imports for the services section
 import seoImage from "./assets/Illustration.svg";
 import ppcImage from "./assets/Illustration-1.svg";
@@ -17,8 +16,6 @@ import smmImage from "./assets/Illustration-2.svg";
 import emImage from "./assets/tokyo-sending-messages-from-one-place-to-another 1.svg";
 import ccImage from "./assets/tokyo-browser-window-with-emoticon-likes-and-stars-around 2.svg";
 import atImage from "./assets/tokyo-volumetric-analytics-of-different-types-in-web-browsers 2.svg";
-
-// Imports for horizontal auto-scroll
 import {
   SiNotion,
   SiNetflix,
@@ -26,22 +23,33 @@ import {
   SiDribbble,
   SiAmazon,
   SiHubspot,
-} from "react-icons/si";
+} from "react-icons/si"; // Imports for horizontal auto-scroll
 import Marquee from "react-fast-marquee";
-
-// Imports for contact-us section
-import contactUsImage from "./assets/contactUsImage.png";
-
-
+import contactUsImage from "./assets/contactUsImage.png"; // Imports for contact-us section
+import { motion, useInView } from "framer-motion"; // Imports for animation on the entire page
 
 function Home() {
+  const heroRef = useRef(null);
+  const makeThingsHappenRef = useRef(null);
+  const caseStudyRef = useRef(null);
+  const testimonialsRef = useRef(null);
+  const contactUsRef = useRef(null);
+
+  const isHeroInView = useInView(heroRef, { once: false });
+  const isMakeThingsHappenInView = useInView(makeThingsHappenRef, {
+    once: false,
+  });
+  const isCaseStudyInView = useInView(caseStudyRef, { once: false });
+  const isTestimonialsInView = useInView(testimonialsRef, { once: false });
+  const isContactUsInView = useInView(contactUsRef, { once: false });
+
   const icons = [SiNotion, SiNetflix, SiZoom, SiDribbble, SiAmazon, SiHubspot];
 
   //Array holding the various services features
-const servicesArray = [
+  const servicesArray = [
     {
       label: "Search Engine ‍Optimisation",
-      image: ppcImage, 
+      image: ppcImage,
       link: "#services",
       boxStyling: "grayService",
       textBg: "primary",
@@ -86,7 +94,13 @@ const servicesArray = [
   return (
     <div className="font-grotesk py-6">
       <NavBar />
-      <main className="flex flex-col gap-18 my-36  px-4 lg:px-24 md:px-12">
+      <motion.main
+        ref={heroRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={isHeroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
+        transition={{ duration: 0.8 }}
+        className="flex flex-col gap-18 my-36  px-4 lg:px-24 md:px-12"
+      >
         <div className="grid md:grid-cols-2 md:grid-rows-3 md:gap-2 gap-5">
           <h1 className="order-1 heading-text">
             Navigating the digital landscape for success
@@ -117,10 +131,24 @@ const servicesArray = [
             </div>
           </Marquee>
         </div>
-      </main>
+      </motion.main>
 
       {/* Services Section */}
-      <section id="services" className="md:mb-36 mb-18 px-4 lg:px-24 md:px-12">
+      <motion.section
+        variants={{
+          hidden: {},
+          show: {
+            transition: {
+              staggerChildren: 0.2,
+            },
+          },
+        }}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false }}
+        id="services"
+        className="md:mb-36 mb-18 px-4 lg:px-24 md:px-12"
+      >
         <div className="flex flex-col md:flex-row gap-5 items-center mb-10">
           <h2 className="h2 flex-1">Services</h2>
           <p className="text-lg ">
@@ -129,16 +157,31 @@ const servicesArray = [
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:space-y-4 ">
-          {servicesArray.map((service) => {
-            return <ServicesBlock {...service} key={service.link} />;
-          })}
+          {servicesArray.map((service) => (
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                show: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.5 }}
+              key={service.link}
+            >
+              <ServicesBlock {...service} />;
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </motion.section>
 
-
-        {/* Lets make things happen section*/}
-      <section
-        id=""
+      {/* Lets make things happen section*/}
+      <motion.section
+        ref={makeThingsHappenRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={
+          isMakeThingsHappenInView
+            ? { opacity: 1, y: 0 }
+            : { opacity: 0, y: -50 }
+        }
+        transition={{ duration: 0.8 }}
         className="md:mb-36 mb-18 bg-gray md:flex items-center gap-5 rounded-3xl md:h-90 md:p-20 py-6 px-4 lg:px-24 md:px-12 md:w-10/12 w-11/12 m-auto"
       >
         <div className="flex flex-col md:gap-8 gap-6">
@@ -156,10 +199,19 @@ const servicesArray = [
           alt="Smiley with stars"
           className="hidden md:inline w-5/12 "
         ></img>
-      </section>
+      </motion.section>
 
       {/* Case Studies Section */}
-      <section id="use-case" className="md:mb-36 mb-18  px-4 lg:px-24 md:px-12">
+      <motion.section
+        ref={caseStudyRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={
+          isCaseStudyInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }
+        }
+        transition={{ duration: 0.8 }}
+        id="use-case"
+        className="md:mb-36 mb-18  px-4 lg:px-24 md:px-12"
+      >
         <div className="flex flex-col md:flex-row  gap-5 items-center mb-10">
           <h2 className="h2 flex-1">Case Studies</h2>
           <p className="text-lg">
@@ -168,7 +220,7 @@ const servicesArray = [
           </p>
         </div>
         <CaseStudies />
-      </section>
+      </motion.section>
 
       {/* Working process section */}
       <section id="" className="md:mb-36 mb-18  px-4 lg:px-24 md:px-12">
@@ -184,7 +236,21 @@ const servicesArray = [
       </section>
 
       {/* Team section */}
-      <section id="" className="md:mb-36 mb-18  px-4 lg:px-24 md:px-12">
+      <motion.section
+        variants={{
+          hidden: {},
+          show: {
+            transition: {
+              staggerChildren: 0.2,
+            },
+          },
+        }}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false }}
+        id=""
+        className="md:mb-36 mb-18  px-4 lg:px-24 md:px-12"
+      >
         <div className="flex flex-col md:flex-row  gap-5 items-center mb-10">
           <h2 className="h2 flex-1">Team</h2>
           <p className="text-lg">
@@ -198,10 +264,19 @@ const servicesArray = [
             See all team...
           </button>
         </div>
-      </section>
+      </motion.section>
 
       {/* Testimonials section */}
-      <section id="" className="md:mb-36 mb-18 px-4 lg:px-24 md:px-12">
+      <motion.section
+        ref={testimonialsRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={
+          isTestimonialsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }
+        }
+        transition={{ duration: 0.8 }}
+        id=""
+        className="md:mb-36 mb-18 px-4 lg:px-24 md:px-12"
+      >
         <div className="flex flex-col md:flex-row  gap-5 items-center mb-10">
           <h2 className="h2">Testimonials</h2>
           <p className="text-lg">
@@ -212,10 +287,19 @@ const servicesArray = [
         <div>
           <Carousel />
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact Us section */}
-      <section id="" className="md:mb-36 mb-18  px-4 lg:px-24 md:px-12">
+      <motion.section
+        ref={contactUsRef}
+        initial={{ opacity: 0, y: 50 }}
+        animate={
+          isContactUsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }
+        }
+        transition={{ duration: 0.8 }}
+        id=""
+        className="md:mb-36 mb-18  px-4 lg:px-24 md:px-12"
+      >
         <div className="flex flex-col md:flex-row  gap-5 items-center mb-10">
           <h2 className="h2">Contact us</h2>
           <p className="text-lg">
@@ -281,9 +365,12 @@ const servicesArray = [
             </button>
           </form>
 
-          <img className="hidden lg:inline place-self-end-safe absolute top-0 left-[70%] h-full" src={contactUsImage}/>
+          <img
+            className="hidden lg:inline place-self-end-safe absolute top-0 left-[70%] h-full"
+            src={contactUsImage}
+          />
         </div>
-      </section>
+      </motion.section>
 
       <Footer />
     </div>
