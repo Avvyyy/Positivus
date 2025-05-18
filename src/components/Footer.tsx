@@ -1,3 +1,4 @@
+// Footer Component
 import logoWhite from "../assets/logo-white.png";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
@@ -45,7 +46,7 @@ function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <div className="bg-black rounded-t-3xl text-white md:p-10 p-5 flex flex-col  gap-10 md:gap-20 ">
+    <div className="bg-black rounded-t-3xl text-white md:p-10 p-5 flex flex-col  gap-10 md:gap-20 w-11/12 m-auto static">
       <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
         <img src={logoWhite} alt="Positivus white logo" />
         <div className="flex flex-col sm:flex-row justify-evenly items-center md:gap-5 gap-10 text-[16px]">
