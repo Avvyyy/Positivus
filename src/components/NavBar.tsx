@@ -17,10 +17,14 @@ function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="font-grotesk flex flex-col lg:flex-row items-center justify-evenly w-full fixed top-0 bg-white lg:px-20 p-10 lg:py-4 z-50">
+    <nav className="font-grotesk flex flex-col lg:flex-row items-center justify-evenly w-full fixed top-0 bg-white lg:px-20 px-10 py-2 lg:py-4 z-50">
       {/* Logo + Toggle Button */}
       <div className="flex items-center justify-between w-full lg:w-auto">
-        <img src={logo} alt="Positivus Logo" className="w-1/2 sm:w-1/4 lg:w-8/12" />
+        <img
+          src={logo}
+          alt="Positivus Logo"
+          className="w-1/2 sm:w-1/4 lg:w-8/12"
+        />
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
@@ -37,7 +41,9 @@ function NavBar() {
       <ul className="hidden lg:flex text-black text-lg flex-row items-center gap-6 bg-transparent">
         {navLinks.map((link) => (
           <li key={link.href} className="hover:text-gray-500">
-            <HashLink smooth to={link.href}>{link.label}</HashLink>
+            <HashLink smooth to={link.href}>
+              {link.label}
+            </HashLink>
           </li>
         ))}
         <Link
@@ -61,12 +67,14 @@ function NavBar() {
           >
             {navLinks.map((link) => (
               <li key={link.href} className="hover:text-gray">
-                <HashLink smooth to={link.href}>{link.label}</HashLink>
+                <HashLink smooth to={link.href}>
+                  {link.label}
+                </HashLink>
               </li>
             ))}
             <Link
               to="/get-started"
-              className="bg-white text-black rounded-md p-3 h-13 w-max text-base hover:bg-black ease-in delay-75 transition hover:text-white border"
+              className="bg-white text-black rounded-md p-3 h-13 w-max text-base hover:bg-black  focus:bg-black active:bg-black ease-in delay-75 transition hover:text-white border"
             >
               Get Started
             </Link>

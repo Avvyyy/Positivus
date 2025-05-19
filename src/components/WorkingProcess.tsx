@@ -51,7 +51,7 @@ function WorkingProcess() {
             <h4 className="flex gap-5 items-center md:text-3xl text-xl font-medium">
               0{data.index} <span className="text-xl">{data.heading}</span>
             </h4>
-            <button type="button" className='text-4xl bg-white rounded-full'>
+            <button type="button" className='text-4xl bg-transparent rounded-full'>
               {isOpenIndex === data.index ? < SlMinus /> : <GoPlusCircle />}
             </button>
           </div>

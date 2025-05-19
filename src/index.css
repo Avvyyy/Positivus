@@ -11,7 +11,9 @@
 }
 
 .button {
-  @apply bg-secondary text-white rounded-md p-3 h-13 md:w-max  sm:max-w-3/4 w-full text-base hover:bg-primary ease-in-out delay-75 transition hover:text-black hover:border-b-8 border-b-black hover:rounded-b-xl;
+  @apply bg-secondary text-white rounded-md p-3 h-13 md:w-max  sm:max-w-3/4 w-full text-base hover:bg-primary ease-in-out delay-75 transition hover:text-black hover:border-b-8 border-b-black hover:rounded-b-xl focus:bg-primary focus:text-black focus:border-b-8
+  active:bg-primary active:text-black active:border-b-8;
+  
 }
 
 .heading-text {

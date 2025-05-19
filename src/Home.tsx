@@ -94,6 +94,8 @@ function Home() {
   return (
     <div className="font-grotesk py-6">
       <NavBar />
+
+      {/*Hero Menu*/}
       <motion.main
         ref={heroRef}
         initial={{ opacity: 0, y: 50 }}
@@ -166,7 +168,7 @@ function Home() {
               transition={{ duration: 0.5 }}
               key={service.link}
             >
-              <ServicesBlock {...service} />;
+              <ServicesBlock {...service} />
             </motion.div>
           ))}
         </div>
