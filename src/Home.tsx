@@ -279,7 +279,7 @@ function Home() {
         id=""
         className="md:mb-36 mb-18 px-4 lg:px-24 md:px-12"
       >
-        <div className="flex flex-col md:flex-row  gap-5 items-center mb-10">
+        <div className="flex flex-col md:flex-row  gap-5 items-center lg:mb-10 mb-5">
           <h2 className="h2">Testimonials</h2>
           <p className="text-lg">
             Hear from our satisfied clients: Read our testimonials to learn more
