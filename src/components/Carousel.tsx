@@ -38,7 +38,7 @@ function Carousel() {
     );
 
   return (
-    <div className="bg-black rounded-3xl p-20 text-center text-white m-full mx-auto relative">
+    <div className="bg-black rounded-3xl sm:px-10 py-12 lg:py-20 px-6 text-center text-white w-full mx-auto">
       {/* Carousel content */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -47,42 +47,47 @@ function Carousel() {
           animate={{opacity: 1,  x: 0 }}
           exit={{ opacity:0, x: -20 }}
           transition={{ duration: 0.3 }}
+          className="flex flex-col gap-5"
         >
-          <p className="text-lg mb-4">{current.text}</p>
+  
+          <p className="text-base lg:text-lg text-justify w-full lg:w-3/4 m-auto">{current.text}</p>
+          
           <h4 className="font-semibold text-lg flex flex-col gap-2 text-primary">
             {current.name}{" "}
             <span className="text-white font-normal text-sm">{current.role}</span>
           </h4>
         </motion.div>
       </AnimatePresence>
+ 
+     
 
-      {/* Navigation Arrows */}
+      {/* Dots */}
+      <div className="flex items-center justify-between gap-3 mt-6 mx-auto w-4/5">
       <button
         onClick={goPrev}
-        className="absolute top-1/2 left-3 -translate-y-1/2 text-white text-5xl"
+        className="text-white text-4xl"
         aria-label="Previous"
       >
         <RxChevronLeft />
       </button>
-      <button
-        onClick={goNext}
-        className="absolute top-1/2 right-3 -translate-y-1/2 text-white text-5xl"
-        aria-label="Next"
-      >
-        <RxChevronRight />
-      </button>
-
-      {/* Dots */}
-      <div className="flex justify-center gap-3 mt-6">
+      <div className="flex justify-center gap-3">
         {carouselData.map((_, index) => (
           <RiCircleFill
             key={index}
             onClick={() => handleDotClick(index)}
-            className={`cursor-pointer text-2xl ${
+            className={`cursor-pointer lg:text-2xl text-lg ${
               index === currentIndex ? "text-primary" : "text-gray-500"
             }`}
           />
         ))}
+        </div>
+         <button
+        onClick={goNext}
+        className="text-white text-4xl"
+        aria-label="Next"
+      >
+        <RxChevronRight />
+      </button>
       </div>
     </div>
   );
