@@ -1,5 +1,5 @@
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
-import logo from "../assets/Logo.svg";
+import logo from "../assets/images/Logo.svg";
 import { useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";

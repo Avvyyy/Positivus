@@ -1,21 +1,21 @@
 // Landing Page -Home for Positivus
 import { useRef } from "react";
-import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
-import ServicesBlock from "./components/ServicesBlock";
-import CaseStudies from "./components/CaseStudies";
-import Carousel from "./components/Carousel";
-import Team from "./components/Team";
-import WorkingProcess from "./components/WorkingProcess";
-import heroImage from "./assets/hero-image.svg";
-import makeThingsHappen from "./assets/makeThingsHAppen.png";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import ServicesBlock from "../components/ServicesBlock";
+import CaseStudies from "../components/CaseStudies";
+import Carousel from "../components/Carousel";
+import Team from "../components/Team";
+import WorkingProcess from "../components/WorkingProcess";
+import heroImage from "../assets/images/hero-image.svg";
+import makeThingsHappen from "../assets/images/makeThingsHAppen.png";
 // image imports for the services section
-import seoImage from "./assets/Illustration.svg";
-import ppcImage from "./assets/Illustration-1.svg";
-import smmImage from "./assets/Illustration-2.svg";
-import emImage from "./assets/tokyo-sending-messages-from-one-place-to-another 1.svg";
-import ccImage from "./assets/tokyo-browser-window-with-emoticon-likes-and-stars-around 2.svg";
-import atImage from "./assets/tokyo-volumetric-analytics-of-different-types-in-web-browsers 2.svg";
+import seoImage from "../assets/images/Illustration.svg";
+import ppcImage from "../assets/images/Illustration-1.svg";
+import smmImage from "../assets/images/Illustration-2.svg";
+import emImage from "../assets/images/tokyo-sending-messages-from-one-place-to-another 1.svg";
+import ccImage from "../assets/images/tokyo-browser-window-with-emoticon-likes-and-stars-around 2.svg";
+import atImage from "../assets/images/tokyo-volumetric-analytics-of-different-types-in-web-browsers 2.svg";
 import {
   SiNotion,
   SiNetflix,
@@ -25,7 +25,7 @@ import {
   SiHubspot,
 } from "react-icons/si"; // Imports for horizontal auto-scroll
 import Marquee from "react-fast-marquee";
-import contactUsImage from "./assets/contactUsImage.png"; // Imports for contact-us section
+import contactUsImage from "../assets/images/contactUsImage.png"; // Imports for contact-us section
 import { motion, useInView } from "framer-motion"; // Imports for animation on the entire page
 
 function Home() {

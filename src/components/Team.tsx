@@ -1,7 +1,7 @@
 // Teams section cards
 import { Link } from "react-router-dom";
 import { FaLinkedinIn } from "react-icons/fa6";
-import teamImage from "../assets/teamImage.png";
+import teamImage from "../assets/images/teamImage.png";
 import { motion } from "framer-motion";
 function Team() {
   const teamData = [

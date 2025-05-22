@@ -1,5 +1,5 @@
 // Footer Component
-import logoWhite from "../assets/logo-white.png";
+import logoWhite from "../assets/images/logo-white.png";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
 import { SiLinkedin, SiX, SiFacebook } from "react-icons/si";
